@@ -8,4 +8,19 @@
 		<artifactId>base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	<properties>
+		<teacher.exam.client.version>0.0.1-SNAPSHOT</teacher.exam.client.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cts</groupId>
+			<artifactId>teacher-exam-client</artifactId>
+			<version>${teacher.exam.client.version}</version>
+		</dependency>
+	</dependencies>
 </project>
