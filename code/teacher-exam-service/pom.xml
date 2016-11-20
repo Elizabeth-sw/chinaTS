@@ -2,16 +2,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>teacher-exam-service</artifactId>
-	<name>${project.artifactId}</name>
+	<name>teacher</name>
+	<packaging>war</packaging>
 	<parent>
 		<groupId>com.cts</groupId>
 		<artifactId>base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<properties>
-		<hibernate.version>4.3.11.Final</hibernate.version>
 		<teacher.exam.client.version>0.0.1-SNAPSHOT</teacher.exam.client.version>
+		<hibernate.version>4.3.11.Final</hibernate.version>
 		<com.atomikos.version>4.0.4</com.atomikos.version>
+		<mysql.connector.version>5.1.40</mysql.connector.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -37,6 +39,12 @@
 			<version>${hibernate.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+
 		<!-- atomickos start -->
 		<dependency>
 			<groupId>com.atomikos</groupId>
@@ -50,4 +58,21 @@
 		</dependency>
 		<!-- atomickos end -->
 	</dependencies>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.1</version>
+					<configuration>
+						<!-- 注意此处的url -->
+						<url>http://localhost:8080/manager/text</url>
+						<server>tomcat7</server> <!-- 此处的名字必须和setting.xml中配置的ID一致 -->
+						<path>/${projectName}</path> <!-- 此处的名字是项目发布的工程名 -->
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>

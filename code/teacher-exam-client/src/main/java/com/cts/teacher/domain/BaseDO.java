@@ -1,6 +1,9 @@
 package com.cts.teacher.domain;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
+
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 public class BaseDO implements Serializable {
 
@@ -9,11 +12,11 @@ public class BaseDO implements Serializable {
 	 */
 	private static final long serialVersionUID = 3765519189428024425L;
 
-	private long createTime;
-	private long createUser;
-	private long updateTime;
-	private long updateUser;
-	private int sysStatus;
+	protected long createTime;
+	protected long createUser;
+	protected long updateTime;
+	protected long updateUser;
+	protected int sysStatus;
 
 	public long getCreateTime() {
 		return createTime;
@@ -53,6 +56,11 @@ public class BaseDO implements Serializable {
 
 	public void setSysStatus(int sysStatus) {
 		this.sysStatus = sysStatus;
+	}
+
+	@Override
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this); 
 	}
 
 }
