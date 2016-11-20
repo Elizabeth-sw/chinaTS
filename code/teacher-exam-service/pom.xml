@@ -9,18 +9,45 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<properties>
+		<hibernate.version>4.3.11.Final</hibernate.version>
 		<teacher.exam.client.version>0.0.1-SNAPSHOT</teacher.exam.client.version>
+		<com.atomikos.version>4.0.4</com.atomikos.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>${springframework.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>com.cts</groupId>
 			<artifactId>teacher-exam-client</artifactId>
 			<version>${teacher.exam.client.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${springframework.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<!-- atomickos start -->
+		<dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>atomikos-util</artifactId>
+			<version>${com.atomikos.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>transactions-jdbc</artifactId>
+			<version>${com.atomikos.version}</version>
+		</dependency>
+		<!-- atomickos end -->
 	</dependencies>
 </project>
