@@ -4,7 +4,7 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{DD6C36E1-A4A5-46A1-B445-E1EF1850D433}" Name="teacherExam" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="teacherExam.pdm"/>
+		<Model Expanded="Yes" ID="{DD6C36E1-A4A5-46A1-B445-E1EF1850D433}" Loaded="No" Name="teacherExam" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="teacherExam.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
