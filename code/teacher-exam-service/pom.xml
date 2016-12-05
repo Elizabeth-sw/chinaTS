@@ -1,25 +1,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>teacher-exam-service</artifactId>
+	<artifactId>teacher-service</artifactId>
 	<name>teacher</name>
 	<packaging>war</packaging>
 	<parent>
 		<groupId>com.cts</groupId>
-		<artifactId>base</artifactId>
+		<artifactId>cts-base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<properties>
-		<teacher.exam.client.version>0.0.1-SNAPSHOT</teacher.exam.client.version>
-		<hibernate.version>4.3.11.Final</hibernate.version>
-		<com.atomikos.version>4.0.4</com.atomikos.version>
-		<mysql.connector.version>5.1.40</mysql.connector.version>
+		<teacher.client.version>0.0.1-SNAPSHOT</teacher.client.version>
+		<cts.common.version>0.0.1-SNAPSHOT</cts.common.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>com.cts</groupId>
-			<artifactId>teacher-exam-client</artifactId>
-			<version>${teacher.exam.client.version}</version>
+			<artifactId>cts-common</artifactId>
+			<version>${cts.common.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cts</groupId>
+			<artifactId>teacher-client</artifactId>
+			<version>${teacher.client.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -38,11 +41,10 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.connector.version}</version>
+			<version>${mysql.version}</version>
 		</dependency>
 
 		<!-- atomickos start -->

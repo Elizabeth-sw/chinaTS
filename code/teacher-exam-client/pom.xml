@@ -1,24 +1,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>teacher-exam-client</artifactId>
+	<artifactId>teacher-client</artifactId>
 	<name>${project.artifactId}</name>
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>com.cts</groupId>
-		<artifactId>base</artifactId>
+		<artifactId>cts-base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<properties>
-		<javax.persistence.version>1.0.2</javax.persistence.version>
+		<cts.common.version>0.0.1-SNAPSHOT</cts.common.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>com.cts</groupId>
+			<artifactId>cts-common</artifactId>
+			<version>${cts.common.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
 			<version>${javax.persistence.version}</version>
 		</dependency>
-
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
